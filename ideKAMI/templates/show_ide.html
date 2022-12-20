@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.center-card {
+  margin: auto;
+  width: 50%;
+
+}
+
+</style>
+
+
+<h1 class="center">KAMI Foundation | Milenial Mengabdi</h1>
+<h1 class="center" style="font-family:verdana;">Berbagi Ide Bersama KAMI</h1>
+<h5 class="center"style="font-family:courier;"> Yuk berbagi ide berbagi ide bersama KAMI, </h5>
+<h5 class="center" style="font-family:courier;"> Bantu KAMI berkembang dengan cara membagikan</h5>
+<h5 class="center" style="font-family:courier;"> aspirasi kamu. Karena kamu, KAMI maju.</h5>
+
+<h2 class="center">Ide Sejauh ini...</h2>
+
+{% for i in data %}
+<div class="center-card">
+        <p class="card-text" style="font-family:courier;"> - {{i.masukan}}</p>
+
+</div>
+{% endfor %}
+
+
+<ul class="center">
+    <button><a href="{% url 'ideKAMI:create_ide' %}"> Klik disini untuk memasukan idemu!</a></button>
+</ul>
+
+{% endblock content%}
